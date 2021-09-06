@@ -41,7 +41,7 @@ environment {
     stage('Test Application') {
       steps{
         script {
-          sh "docker test"
+          sh "npm test"
         }
       }
     }
