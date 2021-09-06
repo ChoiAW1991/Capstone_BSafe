@@ -4,7 +4,7 @@ environment {
     registryCredential = 'dockerhub'
     dockerImage = ''
   } 
-  agent any 
+  agent { label 'bsafe_node' } 
   stages {
    stage('Cloning Git') {
       steps {
