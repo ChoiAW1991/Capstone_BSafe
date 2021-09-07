@@ -46,5 +46,15 @@ environment {
       }
     }
  
+    stage('Delete Container') {
+      steps{
+        script {
+          sh "docker stop $(docker ps -a -q)"
+          sh "docker rm $(docker ps -a -q)"
+          sh "docker rmi $(docker images -q)"
+        }
+      }
+    }
+      
   }
 }
