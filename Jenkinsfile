@@ -33,7 +33,7 @@ environment {
     stage('Start Container') {
       steps{
         script {
-          sh "docker run -d -p 3000:3000 --name aetna_application:$BUILD_NUMBER choiaw1991/aetna_application:$BUILD_NUMBER"
+          sh "docker run -d -p 3000:3000 --name aetna_application$BUILD_NUMBER choiaw1991/aetna_application:$BUILD_NUMBER"
         }
       }
     }
@@ -49,7 +49,7 @@ environment {
     stage('Delete Container') {
       steps{
         script {
-          sh "docker stop aetna_application:$BUILD_NUMBER"
+          sh "docker stop aetna_application$BUILD_NUMBER"
           sh "docker image rmi -f choiaw1991/aenta_application:$BUILD_NUMBER"
         }
       }
