@@ -50,7 +50,7 @@ environment {
       steps{
         script {
           sh "docker stop aetna_application$BUILD_NUMBER"
-          sh "docker image rmi -f choiaw1991/aenta_application:$BUILD_NUMBER"
+          sh "docker image rmi -f choiaw1991/aetna_application:$BUILD_NUMBER"
         }
       }
     }
